@@ -1,12 +1,41 @@
+{#<!DOCTYPE html>#}
+{#<html>#}
+    {#<head>#}
+        {#<meta charset="UTF-8">#}
+        {#<title>{% block title %}Welcome!{% endblock %}</title>#}
+        {#{% block stylesheets %}{% endblock %}#}
+    {#</head>#}
+    {#<body>#}
+        {#{% block body %}{% endblock %}#}
+        {#{% block javascripts %}{% endblock %}#}
+    {#</body>#}
+{#</html>#}
+
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <meta charset="utf-8">
+
+    <title>Main page</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://bootstrap-4.ru/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://bootstrap-4.ru/docs/4.1/examples/pricing/pricing.css" rel="stylesheet">
+</head>
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+    <h5 class="my-0 mr-md-auto font-weight-normal">Skills tester</h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="#">Log in</a>
+        <a class="p-2 text-dark" href="#">About</a>
+    </nav>
+    <a class="btn btn-outline-primary" href="#">Sign up</a>
+</div>
+
+{% block body %}{% endblock %}
+{% block footer %}{% endblock %}
+
+
 </html>
+
+{% block javascripts %}{% endblock %}
