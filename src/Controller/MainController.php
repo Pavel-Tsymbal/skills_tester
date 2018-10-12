@@ -8,17 +8,16 @@
 
 namespace App\Controller;
 
-
-
-
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class MainController extends AbstractController
 {
 
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function index()
     {
         return $this->render('main/index.html.twig');
     }
-
 }

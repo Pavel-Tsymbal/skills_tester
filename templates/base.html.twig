@@ -1,16 +1,3 @@
-{#<!DOCTYPE html>#}
-{#<html>#}
-    {#<head>#}
-        {#<meta charset="UTF-8">#}
-        {#<title>{% block title %}Welcome!{% endblock %}</title>#}
-        {#{% block stylesheets %}{% endblock %}#}
-    {#</head>#}
-    {#<body>#}
-        {#{% block body %}{% endblock %}#}
-        {#{% block javascripts %}{% endblock %}#}
-    {#</body>#}
-{#</html>#}
-
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8">
@@ -26,10 +13,17 @@
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
     <h5 class="my-0 mr-md-auto font-weight-normal">Skills tester</h5>
     <nav class="my-2 my-md-0 mr-md-3">
-        <a class="p-2 text-dark" href="#">Log in</a>
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <a class="p-2 text-dark" href="{{ path('logout') }}">Log out</a>
+        {% else %}
+        <a class="p-2 text-dark" href="{{ path('login') }}">Log in</a>
+        {% endif %}
         <a class="p-2 text-dark" href="#">About</a>
     </nav>
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    {% else %}
     <a class="btn btn-outline-primary" href="#">Sign up</a>
+    {% endif %}
 </div>
 
 {% block body %}{% endblock %}

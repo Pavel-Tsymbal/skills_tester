@@ -5,3 +5,7 @@
 main_page:
      path: /
      controller: App\Controller\MainController::index
+
+admin_page:
+      path: /admin
+      controller: App\Controller\MainController::admin
