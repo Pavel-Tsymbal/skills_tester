@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}<title>login page</title>{% endblock %}
+
+{% block style %}<link href="/css/auth/login/login.css" rel="stylesheet">{% endblock %}
+
+{% block body %}
+
+    <div class="login">
+        <form class="form-signin" action="{{ path('login') }}" method='POST'>
+            <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+            {% if error %}
+                <span class="error">{{ error.messageKey }}</span>
+            {% endif %}
+            <label for="input_login" class="sr-only">Email address</label>
+            <input type="text" name="_username" id="input_login" class="form-control" value="{{ lastUsername }}"
+                   placeholder="login" required>
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" name="_password" id="inputPassword" class="form-control" placeholder="Password"
+                   required>
+
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        </form>
+    </div>
+
+{% endblock %}
