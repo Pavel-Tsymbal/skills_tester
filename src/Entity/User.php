@@ -3,10 +3,13 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @UniqueEntity(fields={"email"}, message="This one is already taken!")
  */
 class User implements UserInterface
 {
@@ -23,17 +26,13 @@ class User implements UserInterface
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=255, unique=true)
-     */
-    private $login;
-
-    /**
      * @ORM\Column(type="string", length=255)
      */
     private $password;
 
     /**
      * @ORM\Column(type="string", length=255, unique=true)
+     * @Assert\Email()
      */
     private $email;
 
@@ -52,11 +51,6 @@ class User implements UserInterface
         $this->name = $name;
 
         return $this;
-    }
-
-    public function getLogin(): ?string
-    {
-        return $this->login;
     }
 
     public function setLogin(string $login): self

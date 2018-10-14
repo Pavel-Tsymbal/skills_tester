@@ -9,3 +9,7 @@ main_page:
 admin_page:
       path: /admin
       controller: App\Controller\MainController::admin
+
+register:
+      path: /register
+      controller: App\Controller\Auth\RegisterController::registerAction

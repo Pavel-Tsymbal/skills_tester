@@ -9,7 +9,7 @@ class LoginCest
         $I->amOnPage('/');
         $I->see('Hello guest!', 'h1');
         $I->click('log in');
-        $I->fillField('_username', 'admin');
+        $I->fillField('_username', 'admin@admin.com');
         $I->fillField('_password', '1111');
         $I->click('Enter');
         $I->see('Hello! admin', 'h1');

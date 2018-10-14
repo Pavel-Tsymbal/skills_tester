@@ -1,4 +1,4 @@
-.login code {
+.register code {
     background: #F5F5F5;
 }
 
@@ -6,22 +6,22 @@
     color: red
 }
 
-.form-signin {
+.form-signup {
     width: 100%;
     max-width: 330px;
     padding: 15px;
     margin: auto;
 }
 
-.form-signin {
+.form-signup {
     font-weight: 400;
 }
 
-.form-signin input {
-    margin-bottom: 5px;
+.form-signup input {
+    margin-bottom: 10px;
 }
 
-.form-signin .form-control {
+.form-signup .form-control {
     position: relative;
     box-sizing: border-box;
     height: auto;
@@ -29,7 +29,9 @@
     font-size: 16px;
 }
 
-.form-signin button[type="submit"] {
+.form-signup button[type="submit"] {
     margin-top: 15px;
 }
+
+
 

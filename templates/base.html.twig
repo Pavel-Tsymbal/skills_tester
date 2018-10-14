@@ -23,7 +23,7 @@
         </nav>
         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
         {% else %}
-            <a class="btn btn-outline-primary" href="#">Sign up</a>
+            <a class="btn btn-outline-primary" href="{{ path('register') }}">Sign up</a>
         {% endif %}
     </div>
 </div>

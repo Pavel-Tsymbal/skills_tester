@@ -33,7 +33,6 @@ class UserService
     /**
      * @param ObjectManager $manager
      * @param string $name
-     * @param string $login
      * @param string $password
      * @param string $email
      */
@@ -41,17 +40,15 @@ class UserService
     (
         ObjectManager $manager,
         string $name,
-        string $login,
         string $password,
         string $email
     )
     {
         $user = new User();
-        $user->setLogin($login);
         $user->setEmail($email);
         $user->setName($name);
         $user->setPassword(
-            $this->encoder->encodePassword($user,$password)
+            $this->encoder->encodePassword($user, $password)
         );
 
         $manager->persist($user);
