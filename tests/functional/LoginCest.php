@@ -6,12 +6,12 @@ class LoginCest
 {
     public function tryLogin(FunctionalTester $I)
     {
-        $I->amOnPage('/');
-        $I->see('Hello guest!', 'h1');
+        $I->amOnRoute('main_page');
+        $I->seeInTitle('Main page');
         $I->click('Log in');
         $I->fillField('_username', 'admin@admin.com');
         $I->fillField('_password', '1111');
-        $I->click('Enter');
-        $I->see('Hello! admin', 'h1');
+        $I->click('Sign in');
+        $I->seeInTitle('Main page');
     }
 }

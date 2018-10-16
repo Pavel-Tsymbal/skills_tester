@@ -2,37 +2,17 @@
 
 {% block title %}<title>Register page</title>{% endblock %}
 
-{% block style %}<link href="/css/auth/register/register.css" rel="stylesheet">{% endblock %}
+{% block style %}
+    <link href="/css/auth/register/register.css" rel="stylesheet">{% endblock %}
 
 {% block body %}
     <body>
     <div class="register">
 
-        {#<form class="form-signup" action="" method='POST'>#}
-
-            {#{% if error %}#}
-                {#<span class="error">{{ error.messageKey }}</span>#}
-            {#{% endif %}#}
-
-            {#<input type="text" name="_name" class="form-control" placeholder="Full name: Dmitry Petrenko" required>#}
-
-            {#<input type="text" name="_login" class="form-control" placeholder="login" required>#}
-
-            {#<input type="email" name="_email" class="form-control" placeholder="E-male" required>#}
-
-            {#<input type="password" name="_password" class="form-control" placeholder="Password"#}
-                   {#required>#}
-
-            {#<input type="password" name="_confirmPassword" class="form-control" placeholder="Confirm password"#}
-                   {#required>#}
-
-            {#<button class="btn btn-lg btn-primary btn-block" name="Enter" type="submit">Sign up</button>#}
-        {#</form>#}
-
-<div class="form-signup">
-    <h1 class="h3 mb-3 font-weight-normal">Please fill in the fields: </h1>
-    {{ form(form) }}
-</div>
+        <div class="form-signup">
+            <h1 class="h3 mb-3 font-weight-normal">Please fill in the fields: </h1>
+            {{ form(form) }}
+        </div>
 
     </div>
     </body>

@@ -36,6 +36,11 @@ class User implements UserInterface
      */
     private $email;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $role = 'ROLE_USER';
+
     public function getId(): ?int
     {
         return $this->id;
@@ -84,10 +89,22 @@ class User implements UserInterface
         return $this;
     }
 
+    public function getRole(): ?string
+    {
+        return $this->role;
+    }
+
+    public function setRole(string $role): self
+    {
+        $this->role = $role;
+
+        return $this;
+    }
+
     public function getRoles()
     {
         return [
-            'ROLE_USER'
+            $this->getRole()
         ];
     }
 
@@ -98,7 +115,7 @@ class User implements UserInterface
 
     public function getUsername()
     {
-        // TODO: Implement getUsername() method.
+        return $this->getEmail();
     }
 
     public function eraseCredentials()

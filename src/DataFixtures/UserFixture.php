@@ -17,6 +17,6 @@ class UserFixture extends Fixture
 
     public function load(ObjectManager $manager)
     {
-        $this->userService->newUser($manager,'admin',1111,'admin@admin.com');
+        $this->userService->newUser($manager,'admin',1111,'admin@admin.com','ROLE_ADMIN');
     }
 }

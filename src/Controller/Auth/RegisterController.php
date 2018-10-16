@@ -46,7 +46,8 @@ class RegisterController extends AbstractController
                 $em,
                 $user->getName(),
                 $user->getPassword(),
-                $user->getEmail()
+                $user->getEmail(),
+                $user->getRole()
             );
 
             return $this->redirect('/login');

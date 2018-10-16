@@ -35,13 +35,15 @@ class UserService
      * @param string $name
      * @param string $password
      * @param string $email
+     * @param string $role
      */
     public function newUser
     (
         ObjectManager $manager,
         string $name,
         string $password,
-        string $email
+        string $email,
+        string $role
     )
     {
         $user = new User();
@@ -50,6 +52,7 @@ class UserService
         $user->setPassword(
             $this->encoder->encodePassword($user, $password)
         );
+        $user->setRole($role);
 
         $manager->persist($user);
         $manager->flush();
