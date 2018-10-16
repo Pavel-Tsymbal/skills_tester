@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}<title>Register page</title>{% endblock %}
+
+{% block style %}
+    <link href="/css/auth/register/register.css" rel="stylesheet">{% endblock %}
+
+{% block body %}
+    <body>
+    <div class="register">
+
+        <div class="form-signup">
+            <h1 class="h3 mb-3 font-weight-normal">Please fill in the fields: </h1>
+            {{ form(form) }}
+        </div>
+
+    </div>
+    </body>
+{% endblock %}

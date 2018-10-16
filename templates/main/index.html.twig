@@ -1,9 +1,19 @@
 {% extends 'base.html.twig' %}
-{% block body %}
-    <div class="container">
-        <h1>hello!</h1>
-    </div>
 
+{% block title %}
+<title>Main page</title>
+{% endblock %}
+
+{% block body %}
+    <body>
+    <div class="container">
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <h1>Hello! {{ app.user.name }}</h1>
+        {% else %}
+            <h1>Hello guest!</h1>
+        {% endif %}
+    </div>
+    </body>
 {% endblock %}
 
 {% block footer %}

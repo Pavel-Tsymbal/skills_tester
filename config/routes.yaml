@@ -5,3 +5,11 @@
 main_page:
      path: /
      controller: App\Controller\MainController::index
+
+admin_page:
+      path: /admin
+      controller: App\Controller\Admin\AdminController::index
+
+register:
+      path: /register
+      controller: App\Controller\Auth\RegisterController::registerAction
